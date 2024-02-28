@@ -57,8 +57,23 @@ contract FundRaiser {
     }
 
     // gives us a list of all the people who have donated to the campaign
-    function getDoantors() {}
+    function getDonators(uint256 _id) public view returns (address[] memory, uint256[] memory) {
+        return (campaigns[_id].donators, campaigns[_id].donations);
+    }
 
     // get a list of all campaigns
-    function getCampaigns() {} 
+    function getCampaigns() public view returns (Campaign[] memory) {
+
+        // creating an empty array with as many campaign elements as in numberOfCampaigns
+        // it is like [{}, {}, {}, ...]
+        Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
+
+        for(uint i=0; i<numberOfCampaigns; i++) {
+            // fetching the value from storage and populating it in the allCampaigns array
+            Campaign storage item = campaigns[i];
+            allCampaigns[i] = item;
+        }
+
+        return allCampaigns;
+    } 
 }
