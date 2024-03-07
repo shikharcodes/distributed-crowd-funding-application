@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logo, sun } from '../assets';
 import { navlinks } from '../constants';
 
+// Icon component
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
   <div className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
     {!isActive ? (
