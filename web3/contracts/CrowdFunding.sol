@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.17;
 
-contract FundRaiser {
+contract CrowdFunding {
     struct Campaign {
         address owner;
         string title;
