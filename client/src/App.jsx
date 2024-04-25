@@ -8,7 +8,6 @@ import { Navbar, Sidebar } from './components';
 import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
 
 const App = () => {
-  const { contract, isLoading } = useContract("0x0000000000000000000000000000000000000000");
   return (
     <div className="relative sm:-8 p-4 bg-[#13131a] min-h-screen flex flex-row">
 
